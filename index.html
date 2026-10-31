@@ -1,12 +1,184 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mon site</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ton Nom – Sound design</title>
+<meta name="description" content="Portfolio de sound design : cinéma, fiction, création sonore.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #dde4e1;
+    --ink: #1b2a2f;
+    --soft: #4d5f64;
+    --signal: #b3265b;
+    --line: #a9b6b3;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 400 1.0625rem/1.65 "IBM Plex Sans", system-ui, sans-serif;
+  }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--signal); outline-offset: 3px; }
+  .wrap { max-width: 64rem; margin: 0 auto; padding: 0 1.5rem; }
+
+  nav { display: flex; gap: 1.5rem; justify-content: flex-end; padding: 1.5rem 0; }
+  nav a { text-decoration: none; font-weight: 500; }
+  nav a:hover { color: var(--signal); }
+
+  /* Hero : le nom + une forme d'onde */
+  .hero { padding: 3rem 0 2rem; }
+  h1 {
+    font: 800 clamp(3rem, 12vw, 8rem)/0.95 "Bricolage Grotesque", system-ui, sans-serif;
+    letter-spacing: -0.03em;
+    margin: 0 0 1.5rem;
+  }
+  .tagline { max-width: 34rem; font-size: 1.25rem; color: var(--soft); margin: 0 0 2.5rem; }
+  #wave { display: block; width: 100%; height: 7rem; }
+  #wave rect { fill: var(--ink); }
+  #wave rect.on { fill: var(--signal); }
+
+  h2 {
+    font: 700 clamp(1.75rem, 4vw, 2.5rem)/1.1 "Bricolage Grotesque", system-ui, sans-serif;
+    letter-spacing: -0.02em;
+    margin: 0 0 2rem;
+  }
+  section { padding: 4.5rem 0 1rem; }
+
+  /* Projets */
+  .project { border-top: 1px solid var(--line); padding: 1.75rem 0 2.25rem; display: grid; gap: 1rem 2.5rem; grid-template-columns: 1fr; }
+  .project h3 { font: 700 1.5rem/1.2 "Bricolage Grotesque", system-ui, sans-serif; margin: 0 0 .25rem; }
+  .meta { color: var(--soft); margin: 0 0 .75rem; font-size: .95rem; }
+  .project p { margin: 0; max-width: 34rem; }
+  .media { background: #cdd7d3; border: 1px solid var(--line); border-radius: 4px; aspect-ratio: 16 / 9; width: 100%; display: grid; place-items: center; color: var(--soft); font-size: .95rem; }
+  .media iframe { width: 100%; height: 100%; border: 0; }
+  @media (min-width: 52rem) { .project { grid-template-columns: 1fr 1.2fr; } }
+
+  /* À propos */
+  .about { max-width: 38rem; }
+  .about p { margin: 0 0 1rem; }
+
+  /* Contact */
+  .contact a.mail {
+    display: inline-block;
+    font: 700 clamp(1.5rem, 5vw, 2.75rem)/1.2 "Bricolage Grotesque", system-ui, sans-serif;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 6px;
+    text-decoration-color: var(--signal);
+    word-break: break-word;
+  }
+  .contact a.mail:hover { color: var(--signal); }
+  .links { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.25rem; }
+  footer { margin-top: 5rem; padding: 1.5rem 0 2.5rem; border-top: 1px solid var(--line); color: var(--soft); font-size: .9rem; }
+</style>
 </head>
 <body>
-  <h1>Bonjour !</h1>
-  <p>Mon premier site sur GitHub Pages.</p>
+<div class="wrap">
+
+  <nav aria-label="Navigation principale">
+    <a href="#projets">Projets</a>
+    <a href="#a-propos">À propos</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header class="hero">
+    <h1>Ton Nom</h1>
+    <p class="tagline">Sound designer. Je travaille le son pour le cinéma et la fiction, des sons synthétiques aux ambiances les plus discrètes.</p>
+    <svg id="wave" aria-hidden="true" preserveAspectRatio="none"></svg>
+  </header>
+
+  <main>
+    <section id="projets">
+      <h2>Projets</h2>
+
+      <article class="project">
+        <div>
+          <h3>Titre du projet</h3>
+          <p class="meta">Court métrage · 2026 · Sound design et mixage</p>
+          <p>Deux phrases : le projet, ce que tu as fait précisément et l'idée sonore principale.</p>
+        </div>
+        <div class="media">
+          <!-- Remplace ce texte par un lecteur intégré (voir plus bas) -->
+          Vidéo ou lecteur audio ici
+        </div>
+      </article>
+
+      <article class="project">
+        <div>
+          <h3>Autre projet</h3>
+          <p class="meta">Installation sonore · 2025 · Création sonore</p>
+          <p>Même structure : contexte, ton rôle, ce qui rend le son singulier.</p>
+        </div>
+        <div class="media">Vidéo ou lecteur audio ici</div>
+      </article>
+
+      <article class="project">
+        <div>
+          <h3>Showreel</h3>
+          <p class="meta">2026 · 2 min</p>
+          <p>Une sélection de tes meilleurs extraits, montés avec le son d'origine.</p>
+        </div>
+        <div class="media">Vidéo ou lecteur audio ici</div>
+      </article>
+    </section>
+
+    <section id="a-propos">
+      <h2>À propos</h2>
+      <div class="about">
+        <p>Quelques lignes sur ton parcours, ta formation et ce qui guide ton travail sur le son.</p>
+        <p>Dis aussi ce que tu cherches : stages, collaborations, projets de court métrage, etc.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <a class="mail" href="mailto:ton.email@exemple.com">ton.email@exemple.com</a>
+      <div class="links">
+        <a href="#">LinkedIn</a>
+        <a href="#">SoundCloud</a>
+        <a href="#">Vimeo</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 Ton Nom</footer>
+</div>
+
+<script>
+  // Forme d'onde décorative : une barre sur deux s'allume au survol.
+  (function () {
+    var svg = document.getElementById('wave');
+    var n = 120, w = 1200, h = 100, ns = 'http://www.w3.org/2000/svg';
+    svg.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
+    var seed = 7;
+    function rnd() { seed = (seed * 16807) % 2147483647; return seed / 2147483647; }
+    for (var i = 0; i < n; i++) {
+      var t = i / (n - 1);
+      var env = Math.sin(Math.PI * t) * 0.75 + 0.15;
+      var bar = Math.max(4, env * (0.25 + rnd() * 0.75) * h);
+      var r = document.createElementNS(ns, 'rect');
+      r.setAttribute('x', (i * (w / n) + 1).toFixed(1));
+      r.setAttribute('width', (w / n - 3).toFixed(1));
+      r.setAttribute('y', ((h - bar) / 2).toFixed(1));
+      r.setAttribute('height', bar.toFixed(1));
+      svg.appendChild(r);
+    }
+    var bars = svg.querySelectorAll('rect');
+    document.querySelector('.hero').addEventListener('mousemove', function (e) {
+      var box = svg.getBoundingClientRect();
+      var p = (e.clientX - box.left) / box.width;
+      bars.forEach(function (b, i) { b.classList.toggle('on', i / n < p && p > 0 && p < 1); });
+    });
+    document.querySelector('.hero').addEventListener('mouseleave', function () {
+      bars.forEach(function (b) { b.classList.remove('on'); });
+    });
+  })();
+</script>
 </body>
 </html>
